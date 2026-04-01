@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Consumiendo mi API</title>
+</head>
+<body>
+    <h1>Lista de Estudiantes</h1>
+    <ul id="lista-estudiantes"></ul>
+
+    <script>
+        //obtener datos API
+        async function obtenerEstudiantes() {
+            try {
+                const respuesta = await fetch('http://localhost/api/estudiantes');
+                const datos = await respuesta.json();
+                
+                const lista = document.getElementById('lista-estudiantes');
+                
+                datos.forEach(estudiante => {
+                    const li = document.createElement('li');
+                    li.textContent = `${estudiante.nombre} ${estudiante.apellido} Edad: ${estudiante.edad}`;
+                    lista.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error al conectar con la API:", error);
+            }
+        }
+
+        obtenerEstudiantes();
+    </script>
+</body>
+</html>
