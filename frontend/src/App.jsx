@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./App.css"
 
 function App() {
   const [estudiantes, setEstudiantes] = useState([]);
@@ -45,9 +46,9 @@ function App() {
       <h1>Estudiantes</h1>
       
       <form className="estudiante" onSubmit={guardar} style={{ marginBottom: '20px' }}>
-        <input placeholder="Nombre" value={nuevo.nombre} onChange={e => setNuevo({...nuevo, nombre: e.target.value})} required />
-        <input placeholder="Apellido" value={nuevo.apellido} onChange={e => setNuevo({...nuevo, apellido: e.target.value})} required />
-        <input placeholder="Edad" value={nuevo.edad} onChange={e => setNuevo({...nuevo, edad: e.target.value})} required />
+        <input className='nombre' placeholder="Nombre" value={nuevo.nombre} onChange={e => setNuevo({...nuevo, nombre: e.target.value})} required />
+        <input className='apellido' placeholder="Apellido" value={nuevo.apellido} onChange={e => setNuevo({...nuevo, apellido: e.target.value})} required />
+        <input className='edad' placeholder="Edad" value={nuevo.edad} onChange={e => setNuevo({...nuevo, edad: e.target.value})} required />
        
         <button type="submit" className='btn-agregar'>Agregar</button>
       </form>
