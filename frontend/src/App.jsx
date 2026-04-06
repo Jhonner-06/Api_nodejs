@@ -41,18 +41,18 @@ function App() {
     }
   };
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+    <div className="container" style={{ padding: '20px', fontFamily: 'sans-serif' }}>
       <h1>Estudiantes</h1>
       
-      <form onSubmit={guardar} style={{ marginBottom: '20px' }}>
+      <form className="estudiante" onSubmit={guardar} style={{ marginBottom: '20px' }}>
         <input placeholder="Nombre" value={nuevo.nombre} onChange={e => setNuevo({...nuevo, nombre: e.target.value})} required />
         <input placeholder="Apellido" value={nuevo.apellido} onChange={e => setNuevo({...nuevo, apellido: e.target.value})} required />
         <input placeholder="Edad" value={nuevo.edad} onChange={e => setNuevo({...nuevo, edad: e.target.value})} required />
        
-        <button type="submit">Agregar</button>
+        <button type="submit" className='btn-agregar'>Agregar</button>
       </form>
 
-      <table border="1" width="100%" style={{ textAlign: 'left' }}>
+      <table className='table-container' border="1" width="100%" style={{ textAlign: 'left' }}>
         <thead>
           <tr><th>ID</th>
           <th>Nombre</th>
@@ -66,7 +66,7 @@ function App() {
               <td>{est.nombre || est.name}</td>
               <td>{est.apellido}</td>
               <td>{est.edad}</td>
-              <button
+              <button className='btn-eliminar'
               onClick={
                 () => eliminar(est.id)
               }>eliminar</button>

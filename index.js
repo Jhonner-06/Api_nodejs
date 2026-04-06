@@ -12,7 +12,7 @@ const estudiantes  = [
 ]
 
 app.get ("/", (req, res) =>{
-    res.send("Node JS api");
+    res.send("jhonner");
 });
 
 app. get("/api/estudiantes", (req, res)=>{
